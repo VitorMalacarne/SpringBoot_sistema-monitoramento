@@ -1,0 +1,25 @@
+@URL=http://localhost:8080/auth
+
+@token=eyJraWQiOiIwalRNdml5a095RDBtb2FLWE5zRFRMVDBuR0VEbXJoWG1VWktlSjJnOFVVPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI0M2NjOWE3YS05MDYxLTcwYmItODA0Ny02MjFiOGJiMWMzMjciLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuc2EtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3NhLWVhc3QtMV8xQWNSU2tZeXAiLCJjbGllbnRfaWQiOiI0NWhwN2hodHVnbW1vb2kyMWdlYjdqZDE3MyIsIm9yaWdpbl9qdGkiOiI5ZDdjZGFmMS04MjZkLTQ1MmMtYTdmMy1hZWZhYzA2NTEyZWMiLCJldmVudF9pZCI6ImQyODM3ZmJlLTY1OWEtNGIwMi04NGM2LTZlOTQ5ZDRmYWExZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE3NTg3MzMwMTIsImV4cCI6MTc1ODczNjYxMiwiaWF0IjoxNzU4NzMzMDEyLCJqdGkiOiJlODhhZGU4Yy1mNDk2LTQyZjgtYTg1Yy03MTAyNGUxM2QyZDQiLCJ1c2VybmFtZSI6IjQzY2M5YTdhLTkwNjEtNzBiYi04MDQ3LTYyMWI4YmIxYzMyNyJ9.dQ34dgdkGNSNo53Ib1Hz0ElkvBBhfAavVzkIXTe9sPstCGyHbkhe9kmijd-tljRrFmymekjXD17ZVc10MlOYxzpQxftrx5t2lnJYcfiP5rGEKubVoO-imZQGPiOutSrMXZmfThxtAmIN-S3toJtXWax-ORBvP-Uo1DvvVhSFVTGXrMMY4aEeAR6yS55wqMwZg1YaGXSXCIFBeP2T2yaCjgAHx4_egrcHldTUkePToxevGi-DETpnnSI9icNRJ8VEGlsv4rqg-39IDb8sDuVGLbf4Es-iz4UsMpTxmp7tKOjUl5xWPy_VX4Ma6-whR64SqQutgQLbAXb6dUiHK5693w
+
+### Validate
+POST {{URL}}/validate HTTP/1.1
+Authorization: Bearer {{token}}
+
+
+### Auth with secret
+POST {{URL}}/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "felipebueno.2004@alunos.utfpr.edu.br",
+    "password": "abcABC123*"
+}
+
+### Refresh token
+POST {{URL}}/refresh HTTP/1.1
+Content-Type: application/json
+
+{
+    "refreshToken": "xxx"
+}
