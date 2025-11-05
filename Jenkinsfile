@@ -5,7 +5,6 @@ pipeline {
         IMAGE_NAME = 'api-spring'
         CONTAINER_NAME = 'api_spring'
         GIT_REPO = 'https://github.com/VitorMalacarne/SpringBoot_sistema-monitoramento.git'
-        EMAIL = 'vitorhenriquewm@gmail.com'
     }
 
     stages {
@@ -34,19 +33,6 @@ pipeline {
             steps {
                 sh 'docker run -d --name ${CONTAINER_NAME} -p 8080:8080 ${IMAGE_NAME}:latest'
             }
-        }
-    }
-
-    post {
-        success {
-            mail to: "${EMAIL}",
-                 subject: "✅ Deploy bem-sucedido: ${IMAGE_NAME}",
-                 body: "O container ${CONTAINER_NAME} foi implantado com sucesso!"
-        }
-        failure {
-            mail to: "${EMAIL}",
-                 subject: "❌ Falha no deploy: ${IMAGE_NAME}",
-                 body: "Houve erro durante o pipeline Jenkins da aplicação ${IMAGE_NAME}."
         }
     }
 }
