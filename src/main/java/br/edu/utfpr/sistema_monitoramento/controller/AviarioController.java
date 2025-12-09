@@ -24,7 +24,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/aviarios")
+@RequestMapping("/aviarios")
 @SecurityRequirement(name = "Authorization")
 @Tag(name = "Aviário", description = "Endpoints para gerenciar aviários")
 public class AviarioController {
